@@ -2,6 +2,7 @@ import time
 import requests
 from selene.api import s
 from selene import query
+import pytest
 from selene.support.shared import browser  # Импорт объекта browser из Selene
 from selenium import webdriver  # Импорт библиотеки Selenium для управления браузером
 from selenium.webdriver.chrome.service import Service  # Импорт для работы с сервисом ChromeDriver
@@ -27,13 +28,15 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 # Назначаем созданный драйвер для использования в Selene через конфигурацию browser
 browser.config.driver = driver
 
-browser.open('https://github.com/pytest-dev/pytest/blob/main/README.rst')
-# s('[data-testid="download-raw-button"]').click() # скачивание с помощью нажатия на кнопку
-download_url = s('[data-testid="raw-button"]').get(query.attribute('href'))
+def test_file_reading():
+    # browser.open('https://github.com/pytest-dev/pytest/blob/main/README.rst')
+    # # s('[data-testid="download-raw-button"]').click() # скачивание с помощью нажатия на кнопку
+    # download_url = s('[data-testid="raw-button"]').get(query.attribute('href'))
+    #
+    # content = requests.get('https://github.com/pytest-dev/pytest/blob/main/README.rst').content
+    # with open('tmp/README2.rst', 'wb') as file:
+    #     file.write(content)
 
-content = requests.get('https://github.com/pytest-dev/pytest/blob/main/README.rst').content
-with open('tmp/README2.rst', 'wb') as file:
-    file.write(content)
-
-with open('tmp/README2.rst', 'rb') as file:
-    file_content = file.read()
+    with open('tmp/README.rst') as file:
+        file_content = file.read()
+        assert "test_answer" in file_content
