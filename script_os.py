@@ -23,3 +23,13 @@ if not os.path.exists(TMP_DIR):
     print(f"Папка 'tmp' создана по пути: {TMP_DIR}")
 else:
     print(f"Папка 'tmp' уже существует по пути: {TMP_DIR}")
+
+
+# Абсолютный путь
+absolute_path = "/Users/goncharov/MindUp/ProjectsPy/QA.GURU/qa_lesson_7"
+
+# Проверка существования файла по абсолютному пути
+if os.path.exists(absolute_path):
+    print(f"Файл существует: {absolute_path}")
+else:
+    print(f"Файл не существует: {absolute_path}")
