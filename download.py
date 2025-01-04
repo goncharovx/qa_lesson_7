@@ -8,7 +8,7 @@ from selenium import webdriver  # Импорт библиотеки Selenium д�
 from selenium.webdriver.chrome.service import Service  # Импорт для работы с сервисом ChromeDriver
 from webdriver_manager.chrome import ChromeDriverManager  # Импорт менеджера для автоматической установки ChromeDriver
 
-from os_module_script import TMP_DIR  # Импорт переменной TMP_DIR с путём временной директории
+from script_os import TMP_DIR  # Импорт переменной TMP_DIR с путём временной директории
 
 
 # Основной тест
