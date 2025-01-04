@@ -103,22 +103,28 @@ if not os.path.exists(TMP_DIR):
 
 # Пример работы с shutil.rmtree
 print("\nДемонстрация использования shutil.rmtree:")
-TEST_DIR = os.path.join(CURRENT_DIR, 'test_dir')
-if not os.path.exists(TEST_DIR):
-    os.mkdir(TEST_DIR)
+
+# Формируем путь к тестовой директории
+TEST_DIR = os.path.join(CURRENT_DIR, 'test_dir')  # Создаём полный путь к директории 'test_dir'
+
+# Проверяем, существует ли тестовая директория
+if not os.path.exists(TEST_DIR):  # Если директория 'test_dir' не существует
+    os.mkdir(TEST_DIR)  # Создаём директорию 'test_dir'
     print(f"Создана тестовая директория: {TEST_DIR}")
 
-    # Создаём файлы в директории
-    for i in range(1, 4):
-        file_path = os.path.join(TEST_DIR, f"test_file_{i}.txt")
-        with open(file_path, "w") as file:
-            file.write(f"This is test file {i}.")
+    # Создаём несколько тестовых файлов в директории
+    for i in range(1, 4):  # Цикл для создания 3 файлов
+        file_path = os.path.join(TEST_DIR, f"test_file_{i}.txt")  # Формируем путь к файлу
+        with open(file_path, "w") as file:  # Открываем файл в режиме записи
+            file.write(f"This is test file {i}.")  # Записываем в файл текст
         print(f"Создан файл: {file_path}")
 
-    print(f"Содержимое тестовой директории перед удалением: {os.listdir(TEST_DIR)}")
+    # Выводим содержимое тестовой директории перед её удалением
+    print(f"Содержимое тестовой директории перед удалением: {os.listdir(TEST_DIR)}")  # os.listdir возвращает список файлов в директории
 
-    # Удаляем директорию с помощью shutil.rmtree
-    shutil.rmtree(TEST_DIR)
+    # Удаляем тестовую директорию с её содержимым
+    shutil.rmtree(TEST_DIR)  # Удаляет директорию 'test_dir' вместе с её файлами
     print(f"Директория '{TEST_DIR}' успешно удалена.")
 else:
+    # Если директория 'test_dir' уже существует
     print(f"Тестовая директория '{TEST_DIR}' уже существует.")
