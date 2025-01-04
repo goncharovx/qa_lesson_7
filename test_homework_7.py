@@ -140,6 +140,5 @@ def test_verify_xlsx_content(setup_resources):
 
 
 def test_clean_after_tests():
-    # Тест проверки чистоты после тестов.
     cleanup([], "extracted")
     assert not os.path.exists("extracted"), "Директория 'extracted' не была удалена."
