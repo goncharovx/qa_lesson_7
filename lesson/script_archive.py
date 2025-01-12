@@ -20,7 +20,7 @@ with ZipFile(zip_path, 'r') as zip_file:
         print(f"\nФайл '{file_name}' не найден в архиве.")
 
     # 4. Извлечение файла 'Hello.txt' в директорию 'tmp'
-    extract_path = 'tmp'
+    extract_path = '../tmp'
     print(f"\nИзвлечение файла '{file_name}' в директорию '{extract_path}':")
     zip_file.extract(file_name, path=extract_path)
     print(f"Файл '{file_name}' извлечён в директорию '{extract_path}'.")

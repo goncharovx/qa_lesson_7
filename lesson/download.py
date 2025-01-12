@@ -52,7 +52,7 @@ def test_file_reading():
         file.write(content)  # Записываем содержимое в файл в бинарном формате
 
     # Открываем локально сохранённый файл и читаем его содержимое
-    with open('tmp/README.rst') as file:
+    with open('../tmp/README.rst') as file:
         file_content = file.read()  # Читаем содержимое файла в виде строки
 
         # Проверяем, что определённая строка присутствует в содержимом файла

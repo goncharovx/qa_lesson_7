@@ -36,7 +36,7 @@ current_dir = os.getcwd()  # Возвращает текущую рабочую 
 print(f"Текущая рабочая директория: {current_dir}")
 
 # Проверка существования пути
-absolute_path = "/Users/goncharov/MindUp/ProjectsPy/QA.GURU/qa_lesson_7"
+absolute_path = "/"
 if os.path.exists(absolute_path):
     print(f"Путь существует: {absolute_path}")
 else:
@@ -59,12 +59,12 @@ print(
     f"\nОбразовательная демонстрация: метод shutil.rmtree('{TMP_DIR}') можно использовать для удаления непустых директорий.")
 
 # Получение списка файлов в директории
-dir_name = "."
+dir_name = ".."
 files = os.listdir(dir_name)  # Возвращает список файлов и папок в директории
 print(f"Содержимое директории '{dir_name}': {files}")
 
 # Проверка, файл это или директория
-for item in os.listdir("."):
+for item in os.listdir(".."):
     if os.path.isfile(item):
         print(f"'{item}' — это файл")
     elif os.path.isdir(item):

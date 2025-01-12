@@ -1,7 +1,7 @@
 from openpyxl import load_workbook
 
 # Загрузка книги Excel
-workbook = load_workbook('tmp/New XLSX.xlsx')
+workbook = load_workbook('../tmp/New XLSX.xlsx')
 
 # Получение активного листа
 sheet = workbook.active

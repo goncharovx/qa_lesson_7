@@ -2,7 +2,7 @@ import os.path  # Импорт модуля os.path для работы с пу�
 from pypdf import PdfReader  # Импорт PdfReader для чтения PDF-файлов
 
 # Создаем объект PdfReader для работы с указанным PDF-файлом
-reader = PdfReader('tmp/Python-Testing-with-pytest-Pragmatic-Bookshelf-2017-Brian-Okken.pdf')
+reader = PdfReader('../tmp/Python-Testing-with-pytest-Pragmatic-Bookshelf-2017-Brian-Okken.pdf')
 
 # 1. Получение общего количества страниц
 print(f"Общее количество страниц: {len(reader.pages)}")  # Количество страниц в PDF
@@ -39,7 +39,7 @@ if len(reader.pages) > 1:
     assert 'Python Testing with pytest' in reader.pages[1].extract_text(), "Текст не найден на второй странице"
 
 # 7. Получение размера PDF-файла
-file_size = os.path.getsize('tmp/Python-Testing-with-pytest-Pragmatic-Bookshelf-2017-Brian-Okken.pdf')  # Размер файла в байтах
+file_size = os.path.getsize('../tmp/Python-Testing-with-pytest-Pragmatic-Bookshelf-2017-Brian-Okken.pdf')  # Размер файла в байтах
 print(f"Размер файла: {file_size} байт")
 
 # Проверка, соответствует ли размер файла ожидаемому

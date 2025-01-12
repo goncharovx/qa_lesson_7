@@ -1,7 +1,7 @@
 from xlrd import open_workbook  # Импорт функции open_workbook для работы с файлами Excel в формате .xls
 
 # Открытие файла Excel
-workbook = open_workbook('tmp/New XLS.xls')
+workbook = open_workbook('../tmp/New XLS.xls')
 
 # 1. Получение количества листов в книге
 print(f"Количество листов в книге: {workbook.nsheets}")
